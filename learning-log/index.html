@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <link rel="stylesheet" href="/assets/css/common.css">
+        <script src="/assets/js/common.js" defer></script>
+        <meta name="author" content="author name">
+        <meta name="description" content="大学入学後から現在までのネットワーク・サーバー学習の記録を、月別タイムライン形式でまとめています。">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <tytle>learning-log</tytle>
+    </head>
+    <body>
+
+        <main>
+            <ul><h2>B1 Spring-semester</h2>
+                    <li>4-5月 CiscoPacketTracerをインストール,仮想上で五角形のスタティックルーティングを完成。</li>
+                    <li>6/13 仮想化プラットフォームproxmoxの上に Ubuntu というOSを持った仮想サーバー（VM）を作成。</li>
+                    <li>6/20 Proxmox 上に作った Ubuntu の仮想サーバー（VM）にログインし、その中で Vim というテキストエディタを使って WireGuard の設定ファイルを編集し、VPNを構築。</li>
+                    <li>7/4 実機に触れる。ルータとPCをコンソール接続するもうまくいかず。（後に原因はファイアウォールだと発覚）</li>
+                    <li>7/10 Prox moxの仮想サーバーにNSDを入れる</li>
+                    <li>7/25 権威DNSサーバーを作る</li>
+                    <li>8月~ 教授にCCNAの学習コースを開設していただく</li>
+                    <li>8/9~ CTFの過去問でトラコン対策勉強</li>
+                    <li>8/30 ICTSCトラコンに参加、チームで一次予選突破</li>
+            </ul>
+            <ul><h2>B1 Autumn-semester</h2>
+                    <li>9/19 Gitインストール</li>
+                    <li>9/26 Wiresharkをインストール、 CCNAの学習コース「CCNA: Introduction to Networks」修了（教授の設定により90%以上）、 「CCNA: Enterprise Networking, Security, and Automation」「CCNA : Switching, Routing, and Wireless Essentials」開始</li>
+                    <li>10/3 ルータ3台でOSPF構築をし、ping疎通確認</li>
+                    <li>10/10 ルータ3台でネットワーク構築</li>
+                    <li>10/17 OSPF、iBGPを使ったルータ四台ひし形ネットワークでのiBGPフルメッシュ</li>
+                    <li>10/24 juniper m7のパスワードリカバリー</li>
+                    <li>10/31 新規入手した中古のciscoルータ初期化</li>
+                    <li>11/8 ICTSC勉強会参加</li>
+                    <li>11/21 juniperトランジット設定</li>
+                    <li>11/28 proxmoxとjuniperのconfigをみて、現状のconvivial netのネットワーク・サーバの構成図を作成</li>
+                    <li>12/12 ICTSCに向けて勉強、Kubernetesは難しそうだと話す。先輩に相談してプロジェクトproxmoxでオープンな仮想サーバー作成許可を得る。これで個人サイトNginx使用してホワイトリスト方式が実現可能に。（レンタルサーバーのDNSをプロジェクトの自分VPSのIPに設定予定）、1月のハッカソン申し込み、BinaryNinjaインストール</li>
+                    <li>12/13 ICTSC2025二次予選出場、チーム内で「新オフィスを救え!!」「ログが保存されない」を解答担当</li>
+                    <li>1/10,11技育CAMPハッカソンに参加、chrome拡張機能「BrowseTree」作成にてバックエンドを担当し、API取り込み実装</li>
+                    <li>1/16VyOS環境でBGPピアリングとブリッジ構築を行い、IPv4/IPv6のIP割当、経路監視、疎通確認を通して回線の安定性をチェック</li>
+            </ul>
+        </main>
+        <div id="footer"></div>
+        <script src="/assets/js/common.js"></script>
+    </body>
+</html>

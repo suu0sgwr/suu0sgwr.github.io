@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+  line-height: 1.7;
+  color: #222;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100vh;
+}
+
+header {
+  border-bottom: 1px solid #ddd;
+}
+
+aside {
+  border-right: 1px solid #ddd;
+  padding: 1rem;
+}
+
+main {
+  padding: 2rem;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <link rel="stylesheet" href="/assets/css/common.css">
+        <script src="/assets/js/common.js" defer></script>
+        <meta name="author" content="author name">
+        <meta name="description" content="Proxmox、Ubuntu、WireGuard、権威DNS（NSD）などを用いたインフラ構築経験を、背景・構成・学びとともにまとめています。">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <tytle>infrastructure-experiment</tytle>
+    </head>
+    <body>
+        <div id="header"></div>
+        <div id="aside"></div>
+        <main>
+            <h3>Proxmox + Ubuntu + WireGuard</h3>
+            <ul>
+                <li>
+                <strong>背景</strong><br>
+                仮想基盤・ネットワークの基礎理解を目的に、
+                Proxmox上へ検証環境を構築。
+                </li>
+
+                <li>
+                <strong>構成</strong>
+                <ul>
+                    <li>Proxmox</li>
+                    <li>Ubuntu Server（VM）</li>
+                    <li>WireGuard（VPN）</li>
+                </ul>
+                </li>
+
+                <li>
+                <strong>自分がやったこと</strong>
+                <ul>
+                    <li>Vimによる設定ファイル編集</li>
+                    <li>WireGuardの鍵生成・Peer設定</li>
+                    <li>VPN接続後の疎通確認</li>
+                </ul>
+                </li>
+
+                <li>
+                <strong>詰まった点 / 学び</strong><br>
+                ネットワーク構成を十分に理解しないまま作業を進めていたため、
+                疎通確認で原因特定に時間がかかった。<br>
+                通信経路を意識した設計・検証の重要性を学び、
+                本経験が後の OSPF / BGP 理解の土台となった。
+                </li>
+            </ul>
+        </main>
+        <div id="footer"></div>
+        <script src="/assets/js/common.js"></script>
+    </body>
+</html>

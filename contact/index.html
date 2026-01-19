@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <link rel="stylesheet" href="/assets/css/common.css">
+        <script src="/assets/js/common.js" defer></script>
+        <meta name="author" content="author name">
+        <meta name="description" content="インフラ・ネットワーク分野に興味のある学生への連絡・問い合わせ用ページです。">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <tytle>contact</tytle>
+    </head>
+    <body>
+        <div id="header"></div>
+        <div id="aside"></div>
+        <main>
+            <form action="" method="">
+            <h2>Contact</h2>
+            <p id="check">
+                <label><input type="radio" name="No1" value="企業" checked="checked">企業</label> 
+                <label><input type="radio" name="No1" value="個人">個人</label>
+            </p>
+            <p>お名前<input type="text" name="user_name"></p>
+            <p>電話番号<input type="number" name="tel"></p>
+            <p>メールアドレス<input type="email" name="user_email"></p>
+            <p>問い合わせ内容<select name="user_type">
+                <option value="活動内容">活動内容</option>
+                <option value="お仕事の依頼">お仕事の依頼</option>
+                <option value="その他">その他</option>
+            </select></p>
+            <p id="check">関心のあるテーマ
+                <input type="checkbox" name="theme" value="プロジェクト活動">プロジェクト活動
+                <input type="checkbox" name="theme" value="技術ブログ">技術ブログ
+            </p>
+            <p>メッセージ<textarea name="message"></textarea></p>
+            <p><input type="submit" value="Send"></p>
+            </form>
+        </main>
+        <div id="footer"></div>
+        <script src="/assets/js/common.js"></script>
+    </body>
+</html>
