@@ -38,12 +38,16 @@ main {
 }
 
 
-.skillseat{
-  display:flex;
+.skillseat {
+  display: flex;
   flex-wrap: wrap;
+  gap: 1.5rem;   
+  list-style: none;
+  padding: 0;
 }
-.skills li {
-  width: 50%;
+
+.skillseat li {
+  width: calc(50% - 0.75rem);
 }
 
 .side-nav {
