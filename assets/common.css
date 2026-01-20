@@ -19,6 +19,15 @@ body {
 .header-nav {
   border-bottom: 1px solid #ddd;
 }
+.header-nav ul {
+display: flex;
+justify-content: center;
+border:2px solid blue;
+background-color:white;
+}
+.header-nav ul li{
+margin: 0 40px;
+}
 
 .side-nav {
   border-right: 1px solid #ddd;
