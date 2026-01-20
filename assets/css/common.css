@@ -45,6 +45,7 @@ main {
 
 .side-nav ul{
   list-style: none; /*アサイドリストの点を消す*/
+  text-decoration: none;/*アンダーラインを消す*/
 }
 
 .header-nav {
@@ -57,6 +58,7 @@ main {
   justify-content: center;
   background-color: white;
   list-style: none; /*ヘッダーリストの点を消す*/
+  text-decoration: none;/*アンダーラインを消す*/
 }
 
 .header-nav ul li {
