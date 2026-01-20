@@ -19,6 +19,7 @@ body {
 
 #flex {
   display: flex;
+  text-align: center;
   min-height: 100vh;
   width: 90%;
 }
@@ -37,7 +38,7 @@ main {
 }
 
 .side-nav ul{
-  list-style: none; /*リストの点を消す*/
+  list-style: none; /*アサイドリストの点を消す*/
 }
 
 .header-nav {
@@ -49,7 +50,7 @@ main {
   display: flex;
   justify-content: center;
   background-color: white;
-  list-style: none;/*リストの点を消す*/
+  list-style: none; /*ヘッダーリストの点を消す*/
 }
 
 .header-nav ul li {
