@@ -10,14 +10,13 @@ body {
   color: #222;
 }
 
-.layout {
-  display: grid;
-  grid-template-columns: 240px 1fr;
-  min-height: 100vh;
+main{
+  flex-basis: 600px;
 }
 
 .header-nav {
   border-bottom: 1px solid #ddd;
+  justify-content: center;
 }
 .header-nav ul {
 display: flex;
@@ -30,13 +29,18 @@ margin: 0 40px;
 }
 
 .side-nav {
+  flex-basis: 100px;
+  background-color: white;
   border-right: 1px solid #ddd;
   padding: 1rem;
 }
 
 
 .footer-nav {
-  border-bottom: 1px solid #ddd;
+  background-color:black;
+  color:white;
+  text-align: center;
+  padding:15px 10px 20px;
 }
 
 
