@@ -53,7 +53,7 @@ main {
   list-style: none; /*アサイドリストの点を消す*/
 }
 
-.side-nav ul li{
+.side-nav ul li a{
   text-decoration: none;/*アンダーラインを消す*/
 }
 
@@ -71,8 +71,12 @@ main {
 
 .header-nav ul li {
   margin: 0 40px;
+}
+
+.header-nav ul li a {
   text-decoration: none;/*アンダーラインを消す*/
 }
+
 
 .footer-nav {
   width: 100%;
