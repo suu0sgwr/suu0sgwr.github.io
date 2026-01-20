@@ -40,7 +40,10 @@ main {
 
 .skillseat{
   display:flex;
-  flex-wrap: wrap-reverse;
+  flex-wrap: wrap;
+}
+.skills li {
+  width: 50%;
 }
 
 .side-nav {
