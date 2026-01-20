@@ -16,14 +16,20 @@ body {
   min-height: 100vh;
 }
 
-header {
+.header-nav {
   border-bottom: 1px solid #ddd;
 }
 
-aside {
+.side-nav {
   border-right: 1px solid #ddd;
   padding: 1rem;
 }
+
+
+.footer-nav {
+  border-bottom: 1px solid #ddd;
+}
+
 
 main {
   padding: 2rem;
