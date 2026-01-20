@@ -1,2 +1,2 @@
 # suu0sgwr.github.io
-portfolio
+portfolio URL → https://suu0sgwr.github.io/about/
