@@ -53,7 +53,7 @@ main {
 .side-nav {
   background-color: white;
   border-left: 1px solid #ddd;
-  padding: 1rem;
+  padding: 1.25rem;
 }
 
 .side-nav ul{
