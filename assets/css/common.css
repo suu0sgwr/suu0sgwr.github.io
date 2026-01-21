@@ -68,10 +68,10 @@ main {
 }
 .side-nav ul{
   list-style: none; /*アサイドリストの点を消す*/
+  padding: 1.5rem;
 }
 .side-nav ul li a{
   text-decoration: none;/*アンダーラインを消す*/
-  padding: 1.5rem;
 }
 
 /* お問い合わせフォーム */
@@ -112,4 +112,6 @@ main {
   text-align: center;
   padding: 15px 10px 20px;
 }
-
+.footer-nav a {
+  color: #222;
+}
