@@ -38,6 +38,7 @@ main {
 }
 
 
+/* スキル一覧表示*/
 .skillseat {
   display: flex;
   flex-wrap: wrap;
@@ -45,46 +46,53 @@ main {
   list-style: none;
   padding: 0;
 }
-
 .skillseat li {
   width: calc(50% - 0.75rem);
 }
 
+/* 購入本リスト */
+table { 
+  border-collapse: collapse;
+  padding: 1em 0;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px 10px;
+}
+
+
+/* 右の目次表示 */
 .side-nav {
   background-color: white;
   border-left: 1px solid #ddd;
   padding: 1.25rem;
 }
-
 .side-nav ul{
   list-style: none; /*アサイドリストの点を消す*/
 }
-
 .side-nav ul li a{
   text-decoration: none;/*アンダーラインを消す*/
 }
 
+/* ヘッダー（About,Projects,Contact） */
 .header-nav {
   width: 100%;
   border-bottom: 1px solid #ddd;
 }
-
 .header-nav ul {
   display: flex;
   justify-content: center;
   background-color: white;
   list-style: none; /*ヘッダーリストの点を消す*/
 }
-
 .header-nav ul li {
   margin: 0 40px;
 }
-
 .header-nav ul li a {
   text-decoration: none;/*アンダーラインを消す*/
 }
 
-
+/* フッター */
 .footer-nav {
   width: 100%;
   background-color: #ddd;
