@@ -65,7 +65,7 @@ main {
 .side-nav {
   background-color: white;
   border-left: 1px solid #ddd;
-  padding: 1.25rem;
+  padding: 1.5rem;
 }
 .side-nav ul{
   list-style: none; /*アサイドリストの点を消す*/
