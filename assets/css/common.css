@@ -65,13 +65,13 @@ main {
 .side-nav {
   background-color: white;
   border-left: 1px solid #ddd;
-  padding: 1.5rem;
 }
 .side-nav ul{
   list-style: none; /*アサイドリストの点を消す*/
 }
 .side-nav ul li a{
   text-decoration: none;/*アンダーラインを消す*/
+  padding: 1.5rem;
 }
 
 /* お問い合わせフォーム */
