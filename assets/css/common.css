@@ -51,11 +51,11 @@ main {
 }
 
 /* 購入本リスト */
-.flex table { 
+#flex table { 
   border-collapse: collapse;
   padding: 1em 0;
 }
-.flex table th, td {
+#flex table th, td {
   border: 1px solid #222;
   padding: 8px 10px;
 }
@@ -73,6 +73,18 @@ main {
 .side-nav ul li a{
   text-decoration: none;/*アンダーラインを消す*/
 }
+
+/* お問い合わせフォーム */
+#flex label:has(input[type="checkbox"]),
+#flex label:has(input[type="radio"]) {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+#flex textarea {
+  vertical-align: middle;
+}
+
 
 /* ヘッダー（About,Projects,Contact） */
 .header-nav {

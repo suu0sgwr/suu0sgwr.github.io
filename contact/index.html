@@ -18,14 +18,16 @@
             <main>
                 <form action="" method="">
                 <h3>Contact</h3>
+                <br>
                 <p id="check">
                     <label><input type="radio" name="No1" value="企業" checked="checked">企業</label> 
                     <label><input type="radio" name="No1" value="個人">個人</label>
                 </p>
-                <p>お名前<input type="text" name="user_name"></p>
-                <p>電話番号<input type="number" name="tel"></p>
-                <p>メールアドレス<input type="email" name="user_email"></p>
-                <p>問い合わせ内容<select name="user_type">
+                <p>お名前 <input type="text" name="user_name"></p>
+                <p>電話番号 <input type="number" name="tel"></p>
+                <p>メールアドレス <input type="email" name="user_email"></p>
+                <p>問い合わせ種別 <select name="user_type">
+                    <option value="お選びください">お選びください</option>
                     <option value="活動内容">活動内容</option>
                     <option value="お仕事の依頼">お仕事の依頼</option>
                     <option value="その他">その他</option>
@@ -34,8 +36,10 @@
                     <input type="checkbox" name="theme" value="プロジェクト活動">プロジェクト活動
                     <input type="checkbox" name="theme" value="技術ブログ">技術ブログ
                 </p>
-                <p>メッセージ<textarea name="message"></textarea></p>
-                <p><input type="submit" value="Send"></p>
+                <p>メッセージ <textarea name="message"></textarea></p>
+                <small>「プライバシーポリシー」に同意の上、送信するをクリックしてください。</small>
+                <br><br>
+                <p><input type="submit" value="送信する"></p>
                 </form>
             </main>
             <div id="aside"></div>
