@@ -13,7 +13,9 @@
         <title>Ruka Sakakibara | NetSec Student Portforio</title>
     </head>
     <body>
-        <div id="header"></div>
+        <div id="header">
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        </div>
         <div id="flex">
             <main>
                 <h4>Network / Infrastructure / Security</h4>
@@ -40,5 +42,10 @@
         </div>
         <div id="footer"></div>
         <script src="/assets/common.js"></script>
+        <script>
+                function toggleMenu() {
+                                            document.getElementById("side-nav").classList.toggle("open");
+                                      }
+        </script>
     </body>
 </html>
