@@ -115,3 +115,29 @@ main {
 .footer-nav a {
   color: #222;
 }
+
+/* ===== スマホ用 ===== */
+@media (max-width: 768px) {
+
+  .container {
+    flex-direction: column;
+  }
+
+  aside {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background: white;
+    transition: 0.3s;
+  }
+
+  aside.open {
+    right: 0;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}
