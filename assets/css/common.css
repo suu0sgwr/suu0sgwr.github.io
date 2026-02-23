@@ -154,7 +154,7 @@ main {
 /*============
 nav https://125naroom.com/web/2958
 =============*/
-nav {
+#navArea nav {
   display: block;
   position: fixed;
   top: 0;
@@ -169,24 +169,25 @@ nav {
   z-index: 3;
   opacity: 0;
 }
-.open nav {
+#navArea.open nav {
   left: 0;
   opacity: 1;
 }
-nav .inner {
+#navArea .inner {
   padding: 25px;
 }
-nav .inner ul {
+
+#navArea .inner ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-nav .inner ul li {
+#navArea .inner ul li {
   position: relative;
   margin: 0;
   border-bottom: 1px solid #333;
 }
-nav .inner ul li a {
+#navArea .inner ul li a {
   display: block;
   color: #333;
   font-size: 14px;
@@ -194,11 +195,11 @@ nav .inner ul li a {
   text-decoration: none;
   transition-duration: 0.2s;
 }
-nav .inner ul li a:hover {
+#navArea .inner ul li a:hover {
   background: #e4e4e4;
 }
 @media screen and (max-width: 767px) {
-  nav {
+  #navArea nav {
     left: -220px;
     width: 220px;
   }
@@ -236,17 +237,17 @@ nav .inner ul li a:hover {
 .toggle_btn span:nth-child(3) {
   bottom: 4px;
 }
-.open .toggle_btn span {
+#navArea.open .toggle_btn span {
   background-color: #fff;
 }
-.open .toggle_btn span:nth-child(1) {
+#navArea.open .toggle_btn span:nth-child(1) {
   -webkit-transform: translateY(10px) rotate(-315deg);
   transform: translateY(10px) rotate(-315deg);
 }
-.open .toggle_btn span:nth-child(2) {
+#navArea.open .toggle_btn span:nth-child(2) {
   opacity: 0;
 }
-.open .toggle_btn span:nth-child(3) {
+#navArea.open .toggle_btn span:nth-child(3) {
   -webkit-transform: translateY(-10px) rotate(315deg);
   transform: translateY(-10px) rotate(315deg);
 }
@@ -257,7 +258,7 @@ nav .inner ul li a:hover {
   display: none;
   transition: all .5s;
 }
-.open #mask {
+#navArea.open #mask {
   display: block;
   position: fixed;
   top: 0;
