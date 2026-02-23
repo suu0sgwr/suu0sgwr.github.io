@@ -14,7 +14,17 @@
     </head>
     <body>
         <div id="header">
-            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+            <div id="navArea">
+                <nav>
+                    <div class="side-nav"></div>
+                </nav>
+                <div class="toggle_btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div id="mask"></div>
+                </div>
         </div>
         <div id="flex">
             <main>
@@ -42,10 +52,5 @@
         </div>
         <div id="footer"></div>
         <script src="/assets/common.js"></script>
-        <script>
-                function toggleMenu() {
-                                            document.getElementById("side-nav").classList.toggle("open");
-                                      }
-        </script>
     </body>
 </html>
