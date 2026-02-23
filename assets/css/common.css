@@ -103,6 +103,14 @@ main {
 .header-nav ul li a {
   text-decoration: none;/*アンダーラインを消す*/
 }
+.menu-btn {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #222;
+  cursor: pointer;
+}
 
 /* フッター */
 .footer-nav {
@@ -138,6 +146,7 @@ main {
   }
 
   .menu-btn {
-    display: block;
+    position: relative;
+  z-index: 1000;
   }
 }
