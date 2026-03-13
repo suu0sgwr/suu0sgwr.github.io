@@ -1,15 +1,4 @@
-function loadHTML(id, file) {
-  fetch(file)
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById(id).innerHTML = html;
-    });
-}
-
-loadHTML("header", "/assets/components/header.html");
-loadHTML("aside", "/assets/components/aside.html");
-loadHTML("footer", "/assets/components/footer.html");
-
+// HTMLを非同期で読み込む関数
 function loadHTML(id, file, callback) {
   fetch(file)
     .then(res => res.text())
@@ -19,26 +8,31 @@ function loadHTML(id, file, callback) {
     });
 }
 
-// header読み込み後にハンバーガーメニューのイベント設定
-// ハンバーガークリックでサイドナビを開く
+// ------------------------------
+// HTMLを読み込む
+// ------------------------------
 loadHTML("header", "/assets/components/header.html", function() {
+  // header読み込み後にハンバーガーイベント登録
   (function($){
-    var $btn   = $('.toggle_btn');  // ハンバーガー
-    var $aside = $('.side-nav');    // 目次
-    var $mask  = $('#mask');        // 背景マスク
+    var $btn   = $('.toggle_btn');    // ハンバーガーメニュー
+    var $aside = $('.side-nav');      // 目次
+    var $mask  = $('#mask');          // 背景マスク
     var open   = 'open';
 
+    // ハンバーガークリックで目次とマスクの表示切替
     $btn.on('click', function() {
-      $aside.toggleClass(open);     // 表示/非表示
+      $aside.toggleClass(open);
       $mask.toggleClass(open);
     });
 
+    // マスククリックで閉じる
     $mask.on('click', function() {
       $aside.removeClass(open);
       $mask.removeClass(open);
     });
   })(jQuery);
 });
-// asideとfooterはそのまま
+
+// aside と footer の読み込み（イベント不要）
 loadHTML("aside", "/assets/components/aside.html");
 loadHTML("footer", "/assets/components/footer.html");
