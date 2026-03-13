@@ -22,18 +22,20 @@ function loadHTML(id, file, callback) {
 // header読み込み後にハンバーガーメニューのイベント設定
 // ハンバーガークリックでサイドナビを開く
 loadHTML("header", "/assets/components/header.html", function() {
-  (function($) {
-    var $navBtn = $('.toggle_btn');   // ハンバーガーメニュー
-    var $aside  = $('.side-nav');     // 目次
-    var openCls = 'open';
+  (function($){
+    var $btn   = $('.toggle_btn');  // ハンバーガー
+    var $aside = $('.side-nav');    // 目次
+    var $mask  = $('#mask');        // 背景マスク
+    var open   = 'open';
 
-    $navBtn.on('click', function() {
-      $aside.toggleClass(openCls);    // openクラスの付け外しで表示/非表示
+    $btn.on('click', function() {
+      $aside.toggleClass(open);     // 表示/非表示
+      $mask.toggleClass(open);
     });
 
-    // マスクやクリック外で閉じたい場合
-    $('#mask').on('click', function() {
-      $aside.removeClass(openCls);
+    $mask.on('click', function() {
+      $aside.removeClass(open);
+      $mask.removeClass(open);
     });
   })(jQuery);
 });
