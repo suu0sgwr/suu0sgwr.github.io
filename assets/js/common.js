@@ -34,5 +34,4 @@ loadHTML("header", "/assets/components/header.html", function() {
   });
 });
 
-
 loadHTML("footer", "/assets/components/footer.html");
