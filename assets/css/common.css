@@ -277,9 +277,15 @@ nav https://125naroom.com/web/2958
 /* PC: 常に右側に表示 */
 @media (min-width: 769px) {
   .side-nav {
-    right: 0;
     position: fixed;
-    display: block;
+    top: 0;
+    right: 0;       /* 画面右端に固定 */
+    width: 250px;
+    height: 100%;
+    background: #fff;
+    z-index: 1000;
+    overflow-y: auto;
+    transition: none; /* PCではアニメ不要 */
   }
 }
 
@@ -288,8 +294,14 @@ nav https://125naroom.com/web/2958
   .toggle_btn { display: block; }
 
   .side-nav {
-    right: -250px; 
-    display: block; /* ここ重要 */
+    position: fixed;
+    top: 0;
+    right: -250px;  /* 初期は画面外 */
+    width: 250px;
+    height: 100%;
+    background: #fff;
+    z-index: 1000;
+    overflow-y: auto;
     transition: right 0.3s;
   }
 
