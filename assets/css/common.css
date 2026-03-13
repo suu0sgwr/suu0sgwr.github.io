@@ -274,7 +274,49 @@ nav https://125naroom.com/web/2958
   display: block;
 }
 
-/* スマホのみ表示 */
-@media (max-width: 768px){
-  .toggle_btn { display: block; }
+/* PC用: 右サイド固定表示 */
+@media (min-width: 769px) {
+  .side-nav {
+    position: fixed;
+    top: 0;
+    right: 0;       /* 画面右端に固定 */
+    width: 250px;
+    height: 100%;
+    background: #fff;
+    z-index: 1000;
+    overflow-y: auto;
+    transition: none; /* PCではアニメーション不要 */
+  }
+}
+
+/* スマホ用 */
+@media (max-width: 768px) {
+  .toggle_btn { display: block; } /* 🍔表示 */
+
+  .side-nav {
+    position: fixed;
+    top: 0;
+    right: -250px;  /* 初期は画面外 */
+    width: 250px;
+    height: 100%;
+    background: #fff;
+    z-index: 1000;
+    overflow-y: auto;
+    transition: right 0.3s;
+  }
+
+  .side-nav.open {
+    right: 0; /* openでスライド表示 */
+  }
+
+  #mask {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 999;
+  }
+
+  #mask.open { display: block; }
 }
