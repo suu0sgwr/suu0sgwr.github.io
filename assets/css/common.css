@@ -216,83 +216,65 @@ nav https://125naroom.com/web/2958
 /*============
 .toggle_btn
 =============*/
+/* 🍔ボタン */
 .toggle_btn {
-  display: none; /* デフォルトで非表示（PC用） */
+  display: none;
   position: fixed;
-  top: 30px;
-  right: 30px;
+  top: 20px;
+  right: 20px;
   width: 30px;
   height: 30px;
-  transition: all .5s;
+  z-index: 1001;
   cursor: pointer;
-  z-index: 3;
-}
-/* スマホ用 */
-@media (max-width: 768px){
-  .side-nav {
-    position: fixed;
-    top: 0;
-    right: -250px; /* 画面外 */
-    width: 250px;
-    height: 100%;
-    background: #fff;
-    z-index: 1000;
-    overflow-y: auto;
-    transition: right 0.3s;
-  }
-  .side-nav.open {
-    right: 0; /* open でスライド表示 */
-  }
 }
 .toggle_btn span {
   display: block;
-  position: absolute;
-  left: 0;
   width: 30px;
   height: 2px;
   background-color: #333;
-  border-radius: 4px;
-  transition: all .5s;
+  margin: 6px 0;
 }
-.toggle_btn span:nth-child(1) {
-  top: 4px;
+
+/* aside初期状態 */
+.side-nav {
+  position: fixed;
+  top: 0;
+  right: -250px; /* 初期は画面外 */
+  width: 250px;
+  height: 100%;
+  background: #fff;
+  z-index: 1000;
+  overflow-y: auto;
+  transition: right 0.3s;
 }
-.toggle_btn span:nth-child(2) {
-  top: 14px;
+.side-nav.open {
+  right: 0; /* openで表示 */
 }
-.toggle_btn span:nth-child(3) {
-  bottom: 4px;
+.side-nav ul {
+  padding: 1.5rem;
+  list-style: none;
 }
-#navArea.open .toggle_btn span {
-  background-color: #fff;
+.side-nav ul li a {
+  text-decoration: none;
 }
-#navArea.open .toggle_btn span:nth-child(1) {
-  -webkit-transform: translateY(10px) rotate(-315deg);
-  transform: translateY(10px) rotate(-315deg);
-}
-#navArea.open .toggle_btn span:nth-child(2) {
-  opacity: 0;
-}
-#navArea.open .toggle_btn span:nth-child(3) {
-  -webkit-transform: translateY(-10px) rotate(315deg);
-  transform: translateY(-10px) rotate(315deg);
-}
+
+
 /*============
 #mask
 =============*/
 #mask {
   display: none;
-  transition: all .5s;
-}
-#navArea.open #mask {
-  display: block;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  opacity: .8;
-  z-index: 2;
-  cursor: pointer;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 999;
+}
+#mask.open {
+  display: block;
+}
+
+/* スマホのみ表示 */
+@media (max-width: 768px){
+  .toggle_btn { display: block; }
 }

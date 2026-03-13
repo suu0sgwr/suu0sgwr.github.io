@@ -1,4 +1,3 @@
-// HTMLを非同期で読み込む関数
 function loadHTML(id, file, callback) {
   fetch(file)
     .then(res => res.text())
@@ -18,11 +17,7 @@ loadHTML("header", "/assets/components/header.html", function() {
 
     if (!btn || !aside || !mask) return;
 
-    // 初期状態
-    aside.classList.remove('open');
-    mask.classList.remove('open');
-
-    // 🍔クリックで開閉
+    // ハンバーガークリックで開閉
     btn.addEventListener('click', () => {
       aside.classList.toggle('open');
       mask.classList.toggle('open');
