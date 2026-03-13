@@ -17,8 +17,7 @@ const btn   = document.querySelector('.toggle_btn'); // ハンバーガー
 const aside = document.querySelector('.side-nav');   // 目次
 const mask  = document.getElementById('mask');       // 背景マスク
 
-// ハンバーガーを表示（念のため）
-btn.style.display = 'block';
+if (!btn || !aside || !mask) return;
 
 // クリックで open クラス切替
 btn.addEventListener('click', () => {
