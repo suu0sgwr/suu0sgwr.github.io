@@ -219,32 +219,47 @@ nav https://125naroom.com/web/2958
 }
 /* スマホ用 */
 @media (max-width: 768px) {
-  aside.side-nav {
+
+  /* ハンバーガー表示 */
+  .toggle_btn {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    z-index: 1001;
+    cursor: pointer;
+  }
+
+  /* aside初期非表示、開いたら表示 */
+  .side-nav {
     position: fixed;
     top: 0;
-    right: 0;           /* 画面内に固定 */
+    right: -250px;  /* 初期は画面外 */
     width: 250px;
     height: 100%;
     background: white;
-    display: none; /* 初期は非表示 */
+    display: block;  /* display自体はblockのまま */
     z-index: 1000;
     transition: right 0.3s;
   }
-  .toggle_btn {
-    display: block;
-  }
+
   .side-nav.open {
-    display: block; /* openで表示 */
+    right: 0; /* openで画面内にスライド */
   }
 
+  /* 背景マスク */
   #mask {
     display: none;
     position: fixed;
     top: 0; left: 0;
-    width: 100%; height: 100%;
+    width: 100%;
+    height: 100%;
     background: rgba(0,0,0,0.6);
     z-index: 999;
   }
+
   #mask.open {
     display: block;
   }
