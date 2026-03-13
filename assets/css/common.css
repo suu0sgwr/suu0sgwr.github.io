@@ -228,12 +228,11 @@ nav https://125naroom.com/web/2958
   z-index: 3;
 }
 /* スマホ用 */
-@media (max-width: 768px) {
-  .toggle_btn { display: block; z-index: 1001; }
+@media (max-width: 768px){
   .side-nav {
     position: fixed;
     top: 0;
-    right: -250px;
+    right: -250px; /* 画面外 */
     width: 250px;
     height: 100%;
     background: #fff;
@@ -242,18 +241,7 @@ nav https://125naroom.com/web/2958
     transition: right 0.3s;
   }
   .side-nav.open {
-    right: 0;
-  }
-  #mask {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.6);
-    z-index: 999;
-  }
-  #mask.open {
-    display: block;
+    right: 0; /* open でスライド表示 */
   }
 }
 .toggle_btn span {

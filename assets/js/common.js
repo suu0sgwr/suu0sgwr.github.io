@@ -8,6 +8,7 @@ function loadHTML(id, file, callback) {
     });
 }
 
+// header → aside → footer
 loadHTML("header", "/assets/components/header.html", function() {
   loadHTML("aside", "/assets/components/aside.html", function() {
 
@@ -17,28 +18,22 @@ loadHTML("header", "/assets/components/header.html", function() {
 
     if (!btn || !aside || !mask) return;
 
-    // 初期非表示
-    aside.style.right = "-250px";
+    // 初期状態
+    aside.classList.remove('open');
+    mask.classList.remove('open');
 
     // 🍔クリックで開閉
     btn.addEventListener('click', () => {
-      if(aside.classList.contains('open')) {
-        aside.classList.remove('open');
-        aside.style.right = "-250px";
-        mask.classList.remove('open');
-      } else {
-        aside.classList.add('open');
-        aside.style.right = "0";
-        mask.classList.add('open');
-      }
+      aside.classList.toggle('open');
+      mask.classList.toggle('open');
     });
 
     // マスククリックで閉じる
     mask.addEventListener('click', () => {
       aside.classList.remove('open');
-      aside.style.right = "-250px";
       mask.classList.remove('open');
     });
-
   });
 });
+
+loadHTML("footer", "/assets/components/footer.html");
