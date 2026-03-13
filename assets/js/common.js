@@ -7,23 +7,23 @@ function loadHTML(id, file, callback) {
     });
 }
 
-// header → aside → footer
 loadHTML("header", "/assets/components/header.html", function() {
   loadHTML("aside", "/assets/components/aside.html", function() {
 
-    const btn   = document.querySelector('.toggle_btn');
-    const aside = document.querySelector('.side-nav');
-    const mask  = document.getElementById('mask');
+    const btn   = document.querySelector('.toggle_btn');  // 🍔
+    const aside = document.querySelector('.side-nav');    // aside
+    const mask  = document.getElementById('mask');        // マスク
 
     if (!btn || !aside || !mask) return;
 
-    // ハンバーガークリックで開閉
+    // スマホのみ、aside初期非表示
+    aside.style.right = '-250px';
+
     btn.addEventListener('click', () => {
       aside.classList.toggle('open');
       mask.classList.toggle('open');
     });
 
-    // マスククリックで閉じる
     mask.addEventListener('click', () => {
       aside.classList.remove('open');
       mask.classList.remove('open');
