@@ -62,12 +62,22 @@ main {
 
 /* 右の目次表示 */
 .side-nav {
-  background-color: white;
-  border-left: 1px solid #ddd;
+  position: fixed;
+  top: 0;
+  right: -250px;  
+  width: 250px;
+  height: 100%;
+  background: white;
+  z-index: 1000;       /* ハンバーガーより上 */
+  overflow-y: auto;    /* 中身スクロール可能に */
+  transition: right 0.3s;
 }
-.side-nav ul{
-  list-style: none; /*アサイドリストの点を消す*/
+.side-nav ul {
   padding: 1.5rem;
+  list-style: none;
+}
+.side-nav.open {
+  right: 0;
 }
 .side-nav ul li a{
   text-decoration: none;/*アンダーラインを消す*/

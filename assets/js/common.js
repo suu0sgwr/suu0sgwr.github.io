@@ -8,10 +8,7 @@ function loadHTML(id, file, callback) {
     });
 }
 
-// header読み込み
 loadHTML("header", "/assets/components/header.html", function() {
-
-  // aside読み込み
   loadHTML("aside", "/assets/components/aside.html", function() {
 
     const btn   = document.querySelector('.toggle_btn');
@@ -20,11 +17,7 @@ loadHTML("header", "/assets/components/header.html", function() {
 
     if (!btn || !aside || !mask) return;
 
-    // 初期状態
-    aside.classList.remove('open');
-    mask.classList.remove('open');
-
-    // 🍔クリックで開閉
+    // 🍔クリックでaside表示
     btn.addEventListener('click', () => {
       aside.classList.toggle('open');
       mask.classList.toggle('open');
@@ -36,8 +29,9 @@ loadHTML("header", "/assets/components/header.html", function() {
       mask.classList.remove('open');
     });
 
+    // 追加：非同期読み込みしたul/liがちゃんと表示されるように強制再描画
+    aside.style.display = "block"; 
   });
-
 });
 
 // footerはイベント不要
