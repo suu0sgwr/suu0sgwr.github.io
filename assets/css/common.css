@@ -226,14 +226,15 @@ nav https://125naroom.com/web/2958
     width: 250px;
     height: 100%;
     background: white;
-    display: block;
+    display: none; /* 初期は非表示 */
     z-index: 1000;
+    transition: right 0.3s;
   }
   .toggle_btn {
     display: block;
   }
-  aside.side-nav.open {
-    display: block;     /* openで表示 */
+  .side-nav.open {
+    display: block; /* openで表示 */
   }
 
   #mask {
