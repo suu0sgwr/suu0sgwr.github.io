@@ -13,24 +13,30 @@ function loadHTML(id, file, callback) {
 // ------------------------------
 loadHTML("header", "/assets/components/header.html", function() {
   // header読み込み後にハンバーガーイベント登録
-  (function($){
-    var $btn   = $('.toggle_btn');    // ハンバーガーメニュー
-    var $aside = $('.side-nav');      // 目次
-    var $mask  = $('#mask');          // 背景マスク
-    var open   = 'open';
+  const btn   = document.querySelector('.toggle_btn'); // ハンバーガー
+  const aside = document.querySelector('.side-nav');   // 目次
+  const mask  = document.getElementById('mask');       // 背景マスク
 
-    // ハンバーガークリックで目次とマスクの表示切替
-    $btn.on('click', function() {
-      $aside.toggleClass(open);
-      $mask.toggleClass(open);
-    });
+  // 要素が存在するか確認
+  if (!btn || !aside || !mask) {
+    console.warn('toggle_btn, side-nav, or mask が見つかりません');
+    return;
+  }
 
-    // マスククリックで閉じる
-    $mask.on('click', function() {
-      $aside.removeClass(open);
-      $mask.removeClass(open);
-    });
-  })(jQuery);
+  // ハンバーガーを表示（念のため）
+  btn.style.display = 'block';
+
+  // クリックで open クラス切替
+  btn.addEventListener('click', () => {
+    aside.classList.toggle('open');
+    mask.classList.toggle('open');
+  });
+
+  // マスククリックで閉じる
+  mask.addEventListener('click', () => {
+    aside.classList.remove('open');
+    mask.classList.remove('open');
+  });
 });
 
 // aside と footer の読み込み（イベント不要）
