@@ -155,6 +155,19 @@ main {
   #mask { display: none; }
   #mask.open { display: block; }
 }
+/* ===== PC用 ===== */
+@media (min-width: 769px) {
+  #flex { width: 100%; }
+  #mask { display: none; }
+  main {
+    margin-right: 250px; /* asideの幅分余白 */
+  }
+  .toggle_btn { display: none; }
+  .side-nav {
+    right: 0;
+    transition: none;
+  }
+}
 
 /*============
 nav https://125naroom.com/web/2958
