@@ -207,7 +207,7 @@ nav https://125naroom.com/web/2958
 .toggle_btn
 =============*/
 .toggle_btn {
-  display: block;
+  display: none; /* デフォルトで非表示（PC用） */
   position: fixed;
   top: 30px;
   right: 30px;
