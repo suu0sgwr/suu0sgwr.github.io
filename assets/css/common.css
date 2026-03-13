@@ -134,30 +134,26 @@ main {
 }
 
 /* ===== スマホ用 ===== */
+/* スマホ: 初期は右外、openでスライド表示 */
 @media (max-width: 768px) {
+  .toggle_btn { display: block; }
 
-  .container {
-    flex-direction: column;
-  }
-
-  aside {
+  .side-nav {
     position: fixed;
     top: 0;
-    right: -250px;
+    right: -250px;  /* 初期は画面外 */
     width: 250px;
     height: 100%;
-    background: white;
-    transition: 0.3s;
+    background: #fff;
+    z-index: 1000;
+    overflow-y: auto;
+    transition: right 0.3s;
   }
 
-  aside.open {
-    right: 0;
-  }
+  .side-nav.open { right: 0; }
 
-  .menu-btn {
-    position: relative;
-  z-index: 1000;
-  }
+  #mask { display: none; }
+  #mask.open { display: block; }
 }
 
 /*============
@@ -251,41 +247,4 @@ nav https://125naroom.com/web/2958
 }
 #mask.open {
   display: block;
-}
-
-/* PC: 常に右側に表示 */
-@media (min-width: 769px) {
-  .side-nav {
-    position: fixed;
-    top: 0;
-    right: 0;       /* 画面右端に固定 */
-    width: 250px;
-    height: 100%;
-    background: #fff;
-    z-index: 1000;
-    overflow-y: auto;
-    transition: none; /* PCではアニメ不要 */
-  }
-}
-
-/* スマホ: 初期は右外、openでスライド表示 */
-@media (max-width: 768px) {
-  .toggle_btn { display: block; }
-
-  .side-nav {
-    position: fixed;
-    top: 0;
-    right: -250px;  /* 初期は画面外 */
-    width: 250px;
-    height: 100%;
-    background: #fff;
-    z-index: 1000;
-    overflow-y: auto;
-    transition: right 0.3s;
-  }
-
-  .side-nav.open { right: 0; }
-
-  #mask { display: none; }
-  #mask.open { display: block; }
 }
