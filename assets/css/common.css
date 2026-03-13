@@ -217,6 +217,11 @@ nav https://125naroom.com/web/2958
   cursor: pointer;
   z-index: 3;
 }
+@media (max-width: 768px) {
+  .toggle_btn {
+    display: block; !important; /* 他のCSSに上書きされないようにする */
+  }
+}
 .toggle_btn span {
   display: block;
   position: absolute;
