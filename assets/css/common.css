@@ -229,6 +229,9 @@ nav https://125naroom.com/web/2958
     display: block;
     z-index: 1000;
   }
+  .toggle_btn {
+    display: block;
+  }
   aside.side-nav.open {
     display: block;     /* openで表示 */
   }
