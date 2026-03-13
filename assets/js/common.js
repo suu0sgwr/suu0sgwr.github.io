@@ -17,22 +17,28 @@ loadHTML("header", "/assets/components/header.html", function() {
 
     if (!btn || !aside || !mask) return;
 
-    // 🍔クリックでaside表示
+    // 初期非表示
+    aside.style.right = "-250px";
+
+    // 🍔クリックで開閉
     btn.addEventListener('click', () => {
-      aside.classList.toggle('open');
-      mask.classList.toggle('open');
+      if(aside.classList.contains('open')) {
+        aside.classList.remove('open');
+        aside.style.right = "-250px";
+        mask.classList.remove('open');
+      } else {
+        aside.classList.add('open');
+        aside.style.right = "0";
+        mask.classList.add('open');
+      }
     });
 
     // マスククリックで閉じる
     mask.addEventListener('click', () => {
       aside.classList.remove('open');
+      aside.style.right = "-250px";
       mask.classList.remove('open');
     });
 
-    // 追加：非同期読み込みしたul/liがちゃんと表示されるように強制再描画
-    aside.style.display = "block"; 
   });
 });
-
-// footerはイベント不要
-loadHTML("footer", "/assets/components/footer.html");

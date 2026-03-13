@@ -74,20 +74,20 @@
                     <li>
                     <strong>自分がやったこと</strong>
                     <ul>
-                        <li>Unbound の設定ファイル（unbound.conf）を作成</li>
-                        <li>root.hints の取得と配置</li>
-                        <li>Dockerfile による Unbound イメージのビルド</li>
-                        <li>コンテナ起動後、LAN 内からの DNS 疎通確認（dig @192.168.22.2 example.com）</li>
-                        <li>docker-compose のサービス定義不備を切り分け、手動ビルド方式へ切り替え</li>
+                        <li>Unboundの設定ファイル（unbound.conf）を作成</li>
+                        <li>root.hintsの取得と配置</li>
+                        <li>DockerfileによるUnboundイメージのビルド</li>
+                        <li>コンテナ起動後、LAN内からのDNS疎通確認（dig @192.168.22.2 example.com）</li>
+                        <li>docker-composeのサービス定義不備を切り分け、手動ビルド方式へ切り替え</li>
                     </ul>
                     </li>
 
                     <li>
                     <strong>詰まった点 / 学び</strong><br>
-                    docker-compose.yml にサービスが定義されていない状態で docker-compose up dns を実行し、
-                    “サービスが存在しない” というエラーの原因特定に時間を要した。<br>
-                    DNS サーバは起動していても、どの IP / どのポートで待ち受けているか を正しく把握しないと疎通確認ができない。<br>
-                    コンテナネットワーク（bridge / host / port mapping）と OS のネットワーク構成を合わせて理解する重要性を実感。
+                    docker-compose.ymlにサービスが定義されていない状態でdocker-compose up dnsを実行し、
+                    サービスが存在しないというエラーの原因特定に時間を要した。<br>
+                    DNS サーバは起動していても、どの IP / どのポートで待ち受けているかを正しく把握しないと疎通確認ができない。<br>
+                    コンテナネットワーク（bridge / host / port mappingとOSのネットワーク構成を合わせて理解する重要性を学んだ。
                     </li>
                 </ul>
             </main>
