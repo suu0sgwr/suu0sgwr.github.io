@@ -10,23 +10,16 @@ function loadHTML(id, file, callback) {
 loadHTML("header", "/assets/components/header.html", function() {
   loadHTML("aside", "/assets/components/aside.html", function() {
 
-const btn   = document.querySelector('.toggle_btn');
-const aside = document.querySelector('.side-nav');
-const mask  = document.getElementById('mask');
+    const btn   = document.querySelector('.toggle_btn');
+    const aside = document.querySelector('.side-nav');
+    const mask  = document.getElementById('mask');
 
-if (btn && aside && mask) {
-  btn.addEventListener('click', () => {
-    aside.classList.toggle('open'); // スマホだけ有効
-    mask.classList.toggle('open');
-  });
-  mask.addEventListener('click', () => {
-    aside.classList.remove('open');
-    mask.classList.remove('open');
-  });
-}
+    if (!btn || !aside || !mask) return;
 
-    // スマホのみ、aside初期非表示
-    aside.style.right = '-250px';
+    // スマホのみ初期位置を設定
+    if (window.innerWidth <= 768) {
+      aside.style.right = '-250px';
+    }
 
     btn.addEventListener('click', () => {
       aside.classList.toggle('open');
@@ -37,7 +30,9 @@ if (btn && aside && mask) {
       aside.classList.remove('open');
       mask.classList.remove('open');
     });
+
   });
 });
+
 
 loadHTML("footer", "/assets/components/footer.html");

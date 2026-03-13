@@ -166,7 +166,9 @@ main {
   .side-nav {
     right: 0;
     transition: none;
+    z-index: 1;
   }
+
 }
 
 /*============
