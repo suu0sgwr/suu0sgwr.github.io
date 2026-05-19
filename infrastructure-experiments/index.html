@@ -90,6 +90,44 @@
                     コンテナネットワーク（bridge / host / port mappingとOSのネットワーク構成を合わせて理解する重要性を学んだ。
                     </li>
                 </ul>
+
+                <h3>26/5/9 ルーター5台構成 マルチプロトコル連携検証</h3>
+                <ul>
+                    <li>
+                    <strong>背景</strong><br>
+                    IS-IS / OSPF / EIGRP / BGP が混在する環境でのルーティング理解を目的に演習を実施。春季講習会の内容を踏まえた実践的検証を行った。
+                    </li>
+
+                    <li>
+                    <strong>構成</strong>
+                    <ul>
+                        <li>Cisco Router ×5（IOS 15.5）</li>
+                        <li>IGP：IS-IS / OSPF / EIGRP</li>
+                        <li>EGP：eBGP（AS間接続）</li>
+                        <li>マルチプロトコル再配送（Route Redistribution）</li>
+                    </ul>
+                    </li>
+
+                    <li>
+                    <strong>自分がやったこと</strong>
+                    <ul>
+                        <li>各ルータ間のルーティング設定と再配送の確認</li>
+                        <li>BGPピア確立および経路広報の検証</li>
+                        <li>show ip route による経路学習状況の分析</li>
+                        <li>疎通確認（エンド間通信）</li>
+                    </ul>
+                    </li>
+
+                    <li>
+                    <strong>詰まった点 / 学び</strong><br>
+                    各プロトコル間で「どの経路がどこまで伝播しているか」を意識しトラブルシューティングにあたった。<br>
+                    具体的には、<br>
+                    ・BGPでAS番号不一致によりネイバー確立失敗し、基本設定の整合性確認の重要性を学んだ。<br>
+                    ・EIGRPの再配送でシードメトリック未設定だったため、メトリック設計の必要性を学んだ。<br>
+                    ・OSPFの再配送でsubnets指定漏れがあり、広報条件の理解を深めた。<br>
+                    また、ルート集約・再配送により不要経路が発生していると教授から指摘を受け、<br>
+                    ログ確認とNull0による破棄設計の重要性を学んだ。
+                    </li>
             </main>
             <div id="aside"></div>
         </div>
