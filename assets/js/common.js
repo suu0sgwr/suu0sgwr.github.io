@@ -35,3 +35,9 @@ loadHTML("header", "/assets/components/header.html", function() {
 });
 
 loadHTML("footer", "/assets/components/footer.html");
+
+
+function toggleMenu() {
+  document.getElementById("sideNav").classList.toggle("active");
+  document.getElementById("overlay").classList.toggle("active");
+}

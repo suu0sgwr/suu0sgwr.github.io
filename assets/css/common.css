@@ -133,49 +133,71 @@ main {
   color: #222;
 }
 
-/* ===== スマホ用 ===== */
-/* スマホ: 初期は右外、openでスライド表示 */
+/* ===== PCデフォルト ===== */
+.hamburger {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+.side-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+}
+
+/* ===== スマホだけ変更 ===== */
 @media (max-width: 768px) {
- .header-nav ul {
-    font-size: 14px;
-    gap: 10px;
-  }
 
-  .toggle_btn { display: block; }
-
+  /* PCサイドバーは一旦隠す */
   .side-nav {
     position: fixed;
-    top: 0;
-    right: -250px;  /* 初期は画面外 */
-    width: 250px;
-    height: 100%;
-    background: #fff;
-    z-index: 1000;
-    overflow-y: auto;
-    transition: right 0.3s;
+    top: 70px;
+    right: 15px;
+    width: 240px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: 0.3s;
+    z-index: 1001;
   }
 
-  .side-nav.open { right: 0; }
+  /* ハンバーガー表示 */
+  .hamburger {
+    display: block;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 1002;
+  }
 
-  #mask { display: none; }
-  #mask.open { display: block; }
+  /* 開いた状態 */
+  .side-nav.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
 }
-/* ===== PC用 ===== */
-@media (min-width: 769px) {
-  #flex { width: 100%; }
-  #mask { display: none; }
-  main {
-    margin-right: 250px; /* asideの幅分余白 */
-  }
-  .toggle_btn { display: none; }
-  .side-nav {
-    right: 0;
-    transition: none;
-    z-index: 1;
-  }
-
-}
-
 /*============
 nav https://125naroom.com/web/2958
 =============*/
