@@ -73,7 +73,7 @@ main {
   right: 0;   
   width: 250px;
   height: auto;
-  max-height: 80vh;
+  max-height: calc(100vh - 100px);
   background: white;
   z-index: 1000;       /* ハンバーガーより上 */
   overflow-y: auto;    
