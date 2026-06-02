@@ -145,6 +145,10 @@ main {
   z-index: 1000;
 }
 
+main {
+  margin-right: 250px;
+}
+
 .side-nav {
   position: fixed;
   top: 0;
