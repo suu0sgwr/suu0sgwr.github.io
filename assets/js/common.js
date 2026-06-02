@@ -10,24 +10,27 @@ function loadHTML(id, file, callback) {
 loadHTML("header", "/assets/components/header.html", function() {
   loadHTML("aside", "/assets/components/aside.html", function() {
 
-    const btn   = document.querySelector('.toggle_btn');
+    const btn   = document.querySelector('.hamburger');
     const aside = document.querySelector('.side-nav');
     const mask  = document.getElementById('mask');
 
     if (!btn || !aside || !mask) return;
 
-    // スマホのみ初期位置を設定
+    // 初期状態（スマホのみ）
     if (window.innerWidth <= 768) {
-      aside.style.right = '-250px';
+      aside.classList.remove('active');
+      mask.classList.remove('open');
     }
 
+    // 開閉
     btn.addEventListener('click', () => {
-      aside.classList.toggle('open');
+      aside.classList.toggle('active');
       mask.classList.toggle('open');
     });
 
+    // 背景クリックで閉じる
     mask.addEventListener('click', () => {
-      aside.classList.remove('open');
+      aside.classList.remove('active');
       mask.classList.remove('open');
     });
 
@@ -35,9 +38,3 @@ loadHTML("header", "/assets/components/header.html", function() {
 });
 
 loadHTML("footer", "/assets/components/footer.html");
-
-
-function toggleMenu() {
-  document.getElementById("sideNav").classList.toggle("active");
-  document.getElementById("overlay").classList.toggle("active");
-}

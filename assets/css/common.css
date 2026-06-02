@@ -6,7 +6,6 @@ html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  max-width: 100%;
 }
 
 body {
@@ -157,10 +156,9 @@ main {
 /* ===== スマホだけ変更 ===== */
 @media (max-width: 768px) {
 
-   .side-nav {
-    width: 240px;
-    right: 15px;
-  }
+  #flex {
+    padding-right: 0;
+  } /*スマホでは左寄せ不要（aside見えないため）*/
 
   .header-nav ul {
     flex-wrap: wrap;
@@ -176,35 +174,34 @@ main {
   .side-nav {
     position: fixed;
     top: 70px;
-    right: 15px;
+    right: 0;
     width: 240px;
+
     background: white;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-10px);
+    transform: translateX(100%);
     transition: 0.3s;
     z-index: 1001;
   }
 
   /* ハンバーガー表示 */
+  .side-nav.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
   .hamburger {
     display: block;
     position: fixed;
     top: 15px;
     right: 15px;
     font-size: 28px;
-    cursor: pointer;
     z-index: 1002;
-  }
-
-  /* 開いた状態 */
-  .side-nav.active {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
   }
 
   .overlay.active {
