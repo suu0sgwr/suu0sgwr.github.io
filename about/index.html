@@ -13,12 +13,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ruka Sakakibara | NetSec Student Portforio</title>
         <style>
-            .more-link {
+            .more-link {/* more linkの文字色など */
                         color: gray;
                         display: block;
                         margin-left: auto;
                         width: fit-content;
                         }
+            #image-grid { /* Gallaryの画像表示サイズなど */
+                        display: grid;
+                        grid-template-columns: repeat(5, 1fr);
+                        gap: 8px;
+                    }
+                    @media (max-width: 600px) {
+                        #image-grid {
+                        grid-template-columns: repeat(3, 1fr);
+                        }
+                    }
         </style>
     </head>
     <body>
@@ -44,20 +54,6 @@
             
                 <h4>Gallary</h4>
                     <div id="image-grid"></div>
-
-                    <style>
-                    #image-grid {
-                        display: grid;
-                        grid-template-columns: repeat(5, 1fr);
-                        gap: 8px;
-                    }
-                    @media (max-width: 600px) {
-                        #image-grid {
-                        grid-template-columns: repeat(3, 1fr);
-                        }
-                    }
-                    </style>
-
                     <script>
                         fetch('/tegalog-images.json')
                         .then(r => r.json())
@@ -72,7 +68,7 @@
                             });
                         });
                     </script>
-                    
+
             </main>
             <div id="aside"></div>
         </div>
