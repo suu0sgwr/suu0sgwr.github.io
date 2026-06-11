@@ -43,22 +43,36 @@
                 <!--<a href="https://qiita.com/suu_22524">Qiita</a>-->
             
                 <h4>Gallary</h4>
-                <div id="image-grid" style="display:flex; gap:8px; flex-wrap:wrap;"></div>
-                <script>
-                    fetch('/tegalog-images.json')
-                    .then(r => r.json())
-                    .then(images => {
-                        const grid = document.getElementById('image-grid');
-                        images.forEach(img => {
-                        const a = document.createElement('a');
-                        a.href = img.link;
-                        a.target = '_blank';
-                        a.innerHTML = `<img src="${img.url}" loading="lazy" alt="">`;
-                        grid.appendChild(a);
-                        });
-                    });
-                </script>
+                    <div id="image-grid"></div>
 
+                    <style>
+                    #image-grid {
+                        display: grid;
+                        grid-template-columns: repeat(5, 1fr);
+                        gap: 8px;
+                    }
+                    @media (max-width: 600px) {
+                        #image-grid {
+                        grid-template-columns: repeat(3, 1fr);
+                        }
+                    }
+                    </style>
+
+                    <script>
+                        fetch('/tegalog-images.json')
+                        .then(r => r.json())
+                        .then(images => {
+                            const grid = document.getElementById('image-grid');
+                            images.forEach(img => {
+                                const a = document.createElement('a');
+                                a.href = img.link;
+                                a.target = '_blank';
+                                a.innerHTML = `<img src="${img.url}" loading="lazy" style="width:100%; aspect-ratio:1/1; object-fit:cover; display:block;" alt="">`;
+                                grid.appendChild(a);
+                            });
+                        });
+                    </script>
+                    
             </main>
             <div id="aside"></div>
         </div>
