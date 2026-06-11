@@ -43,7 +43,7 @@
                 <!--<a href="https://qiita.com/suu_22524">Qiita</a>-->
             
                 <script>
-                    fetch('./tegalog-images.json')
+                    fetch('/tegalog-images.json')
                     .then(r => r.json())
                     .then(images => {
                         const grid = document.getElementById('image-grid');
