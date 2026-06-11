@@ -42,25 +42,27 @@
                 <a href="https://github.com/suu0sgwr">GitHub</a>
                 <!--<a href="https://qiita.com/suu_22524">Qiita</a>-->
             
+                <script>
+                    fetch('./tegalog-images.json')
+                    .then(r => r.json())
+                    .then(images => {
+                        const grid = document.getElementById('image-grid');
+                        images.forEach(img => {
+                        const a = document.createElement('a');
+                        a.href = img.link;
+                        a.target = '_blank';
+                        a.innerHTML = `<img src="${img.url}" loading="lazy" alt="">`;
+                        grid.appendChild(a);
+                        });
+                    });
+                </script>
+
             </main>
             <div id="aside"></div>
         </div>
         <div class="overlay" id="mask"></div>
         <div id="footer"></div>
         <script src="/assets/common.js"></script>
-        <script>
-            fetch('./tegalog-images.json')
-            .then(r => r.json())
-            .then(images => {
-                const grid = document.getElementById('image-grid');
-                images.forEach(img => {
-                const a = document.createElement('a');
-                a.href = img.link;
-                a.target = '_blank';
-                a.innerHTML = `<img src="${img.url}" loading="lazy" alt="">`;
-                grid.appendChild(a);
-                });
-            });
-        </script>
+    
     </body>
 </html>
