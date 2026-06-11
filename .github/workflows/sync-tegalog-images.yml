@@ -1,0 +1,59 @@
+name: Sync Tegalog Images
+
+on:
+  schedule:
+    - cron: '20 20 * * *'  # 毎日UTC20時20分（日本時間5時20分）
+  workflow_dispatch:      # 手動実行も可能
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch latest images from Tegalog RSS
+        run: |
+          python3 << 'EOF'
+          import urllib.request
+          import xml.etree.ElementTree as ET
+          import re
+          import json
+
+          RSS_URL = "https://suu22524tegalog.ltt.jp/tegalog.cgi?mode=rss"  # ← 私のてがろぐ?mode=rss変更済
+
+          with urllib.request.urlopen(RSS_URL) as res:
+              tree = ET.parse(res)
+
+          ns = {'content': 'http://purl.org/rss/1.0/modules/content/'}
+          images = []
+
+          for item in tree.iter('item'):
+              # descriptionまたはcontent:encodedから<img>を抽出
+              desc = item.findtext('description') or ''
+              content = item.findtext('content:encoded', namespaces=ns) or ''
+              text = content or desc
+              
+              found = re.findall(r'<img[^>]+src=["\']([^"\']+)["\']', text)
+              for url in found:
+                  if len(images) < 5:
+                      images.append({
+                          "url": url,
+                          "link": item.findtext('link') or '',
+                          "date": item.findtext('pubDate') or ''
+                      })
+              if len(images) >= 5:
+                  break
+
+          with open('tegalog-images.json', 'w', encoding='utf-8') as f:
+              json.dump(images, f, ensure_ascii=False, indent=2)
+
+          print(f"取得した画像数: {len(images)}")
+          EOF
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add tegalog-images.json
+          git diff --staged --quiet || git commit -m "chore: sync tegalog images"
+          git push
