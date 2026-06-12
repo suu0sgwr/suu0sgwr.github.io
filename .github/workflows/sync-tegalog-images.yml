@@ -19,7 +19,7 @@ jobs:
           import re
           import json
 
-          RSS_URL = "https://suu22524tegalog.ltt.jp/tegalog.cgi?mode=rss&show=50"  # ← 私のてがろぐ?mode=rss変更済、最新投稿50件から画像抽出
+          RSS_URL = "https://suu22524tegalog.ltt.jp/tegalog.cgi?mode=rss&show=100"  # ← 私のてがろぐ?mode=rss変更済、最新投稿50件から画像抽出
 
           with urllib.request.urlopen(RSS_URL) as res:
               tree = ET.parse(res)
