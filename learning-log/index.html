@@ -76,6 +76,7 @@
                         <li>7/12 llm-jp-3.1-1.8bを用い、生成パラメータ（temperature、top-p）の変更やCoT等の各種プロンプト設計がLLMの内部処理・出力精度に与える影響を検証・分析</li>
                         <li>7/18-19 豊田オープンキャンパスにてフリーWi-Fi提供NOC実施</li>
                         <li>8/14-22 ChuNOG8 NOC構築においてk8s基盤構築を担当。物理2台構成のProxmox VE上にTerraform+AnsibleでHA control-plane(cp×3)/worker×2を構築し、HAProxy+keepalivedによるAPI用VIP構成でkubeadm HA初期化時のport競合をJSON Patchで解決、Calico(CNI)・NFS StorageClass・MetalLBの導入と動作確認を実施。</li>
+                        <li>8/23 DNS/DHCP secondary HAをworker側に構築。Kea DHCP + BIND9 + keepalivedでVIPを冗長化し、DHCP(Kea primary)とのHA連携時にmulti-threading設定漏れ・lease_cmdsフック不足を修正し、双方"hot-standby"状態を確立。keepalivedの単一vrrp_instanceでv4/v6混在不可をvrrp_sync_groupで解決し、IPv6 VIPも追加構築。監視向けにrsyslog転送(全9台)を設定し、Proxmoxホストでの二重転送を修正。</li>
                 </ul>
             </main>
             <div id="aside"></div>
